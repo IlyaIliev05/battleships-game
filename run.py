@@ -7,9 +7,9 @@
     3. You can choose a row and column such as A3 to indicate where to shoot
     4. For every shot that hits or misses it will show up in the grid
     5. A ship cannot be placed diagonally, so if a shot hits a part of
-        a ship it would be in one of 4 directions, left, right, up, and down
+    a ship it would be in one of 4 directions, left, right, up, and down
     6. If all ships are found before using up all bullets, you win
-        else, you lose     
+        else, you lose   
     Battlemap description:
     1. "." = water or empty space
     2. "O" = part of a ship
@@ -34,3 +34,23 @@ ship_positions = [[]]
 # Global variable for alphabet
 alphabet = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
 
+
+def validate_grid_and_place_ship(start_row, end_row, start_col, end_col):
+    """
+    Will check the row or column to see if it is safe to place a ship there
+    """
+    global grid
+    global ship_positions
+
+    all_valid = True
+    for r in range(start_row, end_row):
+        for c in range(start_col, end_col):
+            if grid[r][c] != ".":
+                all_valid = False
+                break
+    if all_valid:
+        ship_positions.append([start_row, end_row, start_col, end_col])
+        for r in range(start_row, end_row):
+            for c in range(start_col, end_col):
+                grid[r][c] = "O"
+    return all_valid
