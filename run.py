@@ -2,24 +2,23 @@ import random
 import time
 
 
-"""
-    -------BATTLESHIPS-------
-    Pre-reqs: Loops, Strings, Arrays, 2D Arrays, Global Variables, Methods
-    How the game will function:
-    1. A 10x10 grid will have 8 ships of variable length randomly placed around
-    2. You will have 50 bullets to take down the ships that are in place
-    3. You can choose a row and column such as A3 to indicate where to shoot
-    4. For every shot that hits or misses it will show up in the grid
-    5. A ship cannot be placed diagonally, so if a shot hits a part of
-    a ship it would be in one of 4 directions, left, right, up, and down
-    6. If all ships are found before using up all bullets, you win
-        else, you lose   
-    Battlemap description:
-    1. "." = water or empty space
-    2. "O" = part of a ship
-    3. "X" = part of a ship that was hit with a bullet
-    4. "#" = water that was shot with a bullet, a miss because it hit no ship
-"""
+
+#.   -------BATTLESHIPS-------
+#    Pre-reqs: Loops, Strings, Arrays, 2D Arrays, Global Variables, Methods
+#    How the game will function:
+#    1. A 10x10 grid will have 8 ships of variable length randomly placed in it
+#    2. You will have 50 bullets to take down the ships that are in place
+#    3. You can choose a row and column such as A3 to indicate where to shoot
+#    4. For every shot that hits or misses it will show up in the grid
+#    5. A ship cannot be placed diagonally, so if a shot hits a part of
+#    a ship it would be in one of 4 directions, left, right, up, and down
+#    6. If all ships are found before using all bullets, you winelse, you lose   
+#    Battlemap description:
+#    1. "." = water or empty space
+#    2. "O" = part of a ship
+#    3. "X" = part of a ship that was hit with a bullet
+#    4. "#" = water that was shot with a bullet, a miss because it hit no ship
+
 
 # Global variable for grid
 grid = [[]]
@@ -212,7 +211,6 @@ def check_for_ship_sunk(row, col):
     return True
 
 
-
 def shoot_bullet():
     """
     Updates grid and ships based on where the bullet was shot
@@ -270,7 +268,8 @@ def main():
 
     while game_over is False:
         print_grid()
-        print("Number of ships remaining: " + str(num_of_ships - num_of_ships_sunk))
+        print("Number of ships remaining: " +
+              str(num_of_ships - num_of_ships_sunk))
         print("Number of bullets left: " + str(bullets_left))
         shoot_bullet()
         print("----------------------------")
@@ -279,8 +278,6 @@ def main():
 
 
 if __name__ == '__main__':
-    """
-    Will only be called when program is run from terminal or an IDE like PyCharms
-    """
-    main()
+#    Will only be called when program is run from terminal or IDE like PyCharms
 
+    main()
