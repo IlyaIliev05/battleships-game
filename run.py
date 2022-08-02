@@ -278,6 +278,5 @@ def main():
 
 
 if __name__ == '__main__':
-#    Will only be called when program is run from terminal or IDE like PyCharms
-
+    # Will only be called when program is run from terminal or IDE like PyCharms
     main()
