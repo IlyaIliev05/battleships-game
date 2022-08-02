@@ -114,11 +114,11 @@ def create_grid():
     ship_positions = []
 
     while num_of_ships_placed != num_of_ships:
-        random_row = random.randint(0, rows - 1)
-        random_col = random.randint(0, cols - 1)
+        rand_row = random.randint(0, rows - 1)
+        rand_col = random.randint(0, cols - 1)
         direction = random.choice(["left", "right", "up", "down"])
         ship_size = random.randint(3, 5)
-        if try_place_ship_on_grid(random_row, random_col, direction, ship_size):
+        if try_place_ship_on_grid(rand_row, rand_col, direction, ship_size):
             num_of_ships_placed += 1
 
 
@@ -170,15 +170,15 @@ def accept_valid_bullet_placement():
         row = placement[0]
         col = placement[1]
         if not row.isalpha() or not col.isnumeric():
-            print("Error: Please enter letter (A-J) for row and (0-9) for column")
+            print("Error: Please enter letter (A-J) for row,(0-9) for column")
             continue
         row = alphabet.find(row)
         if not (-1 < row < grid_size):
-            print("Error: Please enter letter (A-J) for row and (0-9) for column")
+            print("Error: Please enter letter (A-J) for row,(0-9) for column")
             continue
         col = int(col)
         if not (-1 < col < grid_size):
-            print("Error: Please enter letter (A-J) for row and (0-9) for column")
+            print("Error: Please enter letter (A-J) for row,(0-9) for column")
             continue
         if grid[row][col] == "#" or grid[row][col] == "X":
             print("You have already shot a bullet here, pick somewhere else")
@@ -191,7 +191,7 @@ def accept_valid_bullet_placement():
 
 def check_for_ship_sunk(row, col):
     """
-    If all parts of a ship have been shot it is sunk. Later increment ships sunk
+    If all parts of a ship have been shot it sinks. Later increment ships sunk
     """
     global ship_positions
     global grid
@@ -277,5 +277,5 @@ def main():
 
 
 if __name__ == '__main__':
-    # Will only be called when program is run from terminal or IDE like PyCharms
+    # Will only be called when program runs from terminal or IDE like PyCharms
     main()
