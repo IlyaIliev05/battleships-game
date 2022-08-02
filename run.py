@@ -208,3 +208,31 @@ def check_for_ship_sunk(row, col):
                     if grid[r][c] != "X":
                         return False
     return True
+
+
+
+def shoot_bullet():
+    """
+    Updates grid and ships based on where the bullet was shot
+    """
+    global grid
+    global num_of_ships_sunk
+    global bullets_left
+
+    row, col = accept_valid_bullet_placement()
+    print("")
+    print("----------------------------")
+
+    if grid[row][col] == ".":
+        print("You missed, no ship was shot")
+        grid[row][col] = "#"
+    elif grid[row][col] == "O":
+        print("You hit!", end=" ")
+        grid[row][col] = "X"
+        if check_for_ship_sunk(row, col):
+            print("A ship was completely sunk!")
+            num_of_ships_sunk += 1
+        else:
+            print("A ship was shot")
+
+    bullets_left -= 1
