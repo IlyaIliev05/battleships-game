@@ -236,3 +236,21 @@ def shoot_bullet():
             print("A ship was shot")
 
     bullets_left -= 1
+
+
+def check_for_game_over():
+    """
+    If all ships have been sunk or we run out of bullets its game over
+    """
+    global num_of_ships_sunk
+    global num_of_ships
+    global bullets_left
+    global game_over
+
+    if num_of_ships == num_of_ships_sunk:
+        print("Congrats you won!")
+        game_over = True
+    elif bullets_left <= 0:
+        print("Sorry, you lost! You ran out of bullets, try again next time!")
+        game_over = True
+
