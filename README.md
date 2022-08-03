@@ -76,3 +76,4 @@ This project was deployed using Code Institute's mock terminal for Heroku.
 ---
 - Code Institute for the deployment terminal
 - Wikipedia for the details on the game Battleship
+- Project created with the help of [CodeReview](https://codereview.stackexchange.com/questions/232013/a-simple-battleship-game)
